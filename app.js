@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    const msg = "Works on my machine.";
+    const item = "machine";
+    const msg = `Works on my ${item}.`;
     res.send(msg);
 });
 
