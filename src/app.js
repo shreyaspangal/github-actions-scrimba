@@ -15,11 +15,11 @@ app.get("/", async (req, res) => {
     res.sendFile(join(publicDir, "index.html"));
 });
 
-app.get('/health', (req, res) => {
+app.get("/health", (req, res) => {
     res.status(503).json({
-        status: 'error',
+        status: "error",
         message:
-            'The garden gnomes have invaded our systems and have broken everything!',
+            "The garden gnomes have invaded our systems and have broken everything!",
     });
 });
 
