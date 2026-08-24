@@ -15,19 +15,19 @@ app.get("/", async (req, res) => {
     res.sendFile(join(publicDir, "index.html"));
 });
 
-app.get('/health', async (req, res) => {
+app.get("/health", async (req, res) => {
     try {
         await getDb().execute(sql`select 1`);
 
         res.status(200).json({
-            status: 'ok',
+            status: "ok",
         });
     } catch (err) {
-        console.error('Health check failed:', err);
+        console.error("Health check failed:", err);
 
         res.status(503).json({
-            status: 'error',
-            message: 'Database unavailable',
+            status: "error",
+            message: "Database unavailable",
         });
     }
 });
