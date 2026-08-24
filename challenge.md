@@ -1,28 +1,14 @@
 Challenge:
 
-1. Continue from the repo you finished in the CI course.
-2. Make sure you have a private Docker Hub repo named `cicd`.
-3. Make sure your GitHub repo still has:
-    - `DOCKERHUB_USERNAME` as a repository variable
-    - `DOCKERHUB_TOKEN` as a repository secret
-4. In your local repo, create a new branch from `main` and switch to it.
-5. Delete the current project files from your local repo, but do not delete the `.git` folder.
-6. Download this scrim's files as a zip, unzip them, and copy them into your local repo.
-7. Re-create any files that did not come through in the zip. Likely files:
-    - `.github/workflows/cicd.yml`
-    - `.prettierrc`
-    - `.dockerignore`
-    - `.gitignore`
-    - `.prettierignore`
-8. Double check that your local file names and folder structure match the scrim.
-9. Run `npm ci` to install a clean set of dependencies from the updated `package-lock.json`.
-10. Run:
-
-- `npm run format`
-- `npm run format:check`
-- `npm run lint`
-- `npm test`
-
-11. Commit the new files and push your branch to GitHub.
-12. Open a pull request into `main` and verify that the CI job passes.
-13. Merge the pull request and verify that the Deploy job passes.
+1. On your local repo, create and swap to a new branch off of "main"
+2. Run the generate migrations command locally with "npm run db:generate"
+3. Add "drizzle/migrations/meta/" to ".prettierignore"
+4. Run "npm run format:check" and verify that it passes
+5. Commit, push them up to GitHub, and merge them into main
+6. Create a Render account if you don't already have one
+7. Set up a new FREE web service that deploys an existing Docker image. You'll need 3 things from Docker Hub:
+    - Docker username
+    - Read-only Docker access token (Create a new one)
+    - Docker image URL
+8. Add "DATABASE_URL" as an environment variable using your Neon connection string
+9. Test the live site by submitting an email address
