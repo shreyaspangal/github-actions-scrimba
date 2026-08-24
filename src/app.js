@@ -28,7 +28,7 @@ app.post("/api/subscribers", async (req, res) => {
 
         await db
             .insert(subscribers)
-            .values({ email, email_address: email })
+            .values({ email_address: email })
             .onConflictDoNothing({ target: subscribers.email_address });
 
         res.sendStatus(200);
